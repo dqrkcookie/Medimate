@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="refresh" content="120">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+
+        body{
+            margin: 0;
+            background-image: url(des/body.jpg);
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .chat-tab{
+            border: 1px solid black;
+            width: max-content;
+            max-height: max-content;
+            background-color: f4df4eff;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        *{
+            outline: none;
+        }
+
+        #chat{
+            border: 1px solid black;
+            width: 100%;
+            height: 300px;
+            max-height: max-content;
+            background-color: grey;
+            display: block;
+            margin: auto;
+            background-image: url(des/chat.jpg);
+            background-size: cover;
+        }
+
+        input[type="textarea"]{
+            padding: 8px 6px;
+            position: relative;
+            top: 25%;
+        }
+
+        input[type="submit"]{
+            display: inline-block;
+            padding: 8px 12px;
+            cursor: pointer;
+            position: relative;
+            width: 26%;
+           
+        }
+
+        #reload{
+            display: inline-block;
+            padding: 8px 12px;
+            cursor: pointer;
+            position: relative;
+            width: 21%;
+        }
+
+        .typing{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
+        }
+
+        h2{
+            display: block;
+            margin-top: 10%;
+            text-align: center;
+            font-size: 38px;
+            color: black;
+            -webkit-text-stroke: .5px #949398ff;
+        }
+
+        
+        .check{
+            position: absolute;
+            width: 98%;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        #names{
+            display: inline-block;
+            padding: 8px 12px;
+            cursor: pointer;
+            position: relative;
+            width: 26%;
+            background-color: #949398ff;
+            color: white;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        #back{
+            display: inline-block;
+            padding: 8px 12px;
+            cursor: pointer;
+            position: relative;
+            width: 26%;
+            background-color: #949398ff;
+            color: white;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            display: none;
+        }
+
+        object{
+            border: 1px solid slateblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #users{
+            background-color: #f4df4eff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            outline: none;
+            height: 40%;
+            border: 1px solid black;
+            display: none;
+        }
+
+        .out{
+            display: flex;
+            justify-content: right;
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+        a{
+            text-decoration: none;
+            color: #949398ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <a href="../LOGIN/login.html"> Sign out </a>
+    </div>
+    <h2> Welcome to Healthcare Professionals section </h2>
+    <iframe id="users" src="lists.php" width="200px" height="150px" scrolling="yes">
+    </iframe>
+    <div class="chat-tab">
+        <iframe id="chat" src="message.php" width="200px" height="150px" scrolling="yes">
+        </iframe>
+        <form action="send.php"  method="POST">
+            <div class="typing">
+                <input type="textarea" name="msgs">
+                <input type="submit" value="Send">
+                <input type="button" id="reload" value="Refresh" onclick="refreshPage()">
+            </div>      
+        </form>
+    </div>
+    <div class="check">
+        <button id="names"> Check app users </button>
+        <button id="back"> Back to chat </button>
+    </div>
+
+    <script>
+        let view = document.querySelector("#users");
+        let chatbox = document.querySelector(".chat-tab");
+        let btn1 = document.querySelector("#names");
+        let btn2 = document.querySelector("#back");
+        
+        document.querySelector("#names").addEventListener("click", function(){
+            view.style.display = "block";
+            chatbox.style.display = "none";
+            btn1.style.display = "none";
+            btn2.style.display = "block";
+        });
+
+        document.querySelector("#back").addEventListener("click", function(){
+            view.style.display = "none";
+            chatbox.style.display = "block";
+            btn1.style.display = "block";
+            btn2.style.display = "none";
+        });
+
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Alarm Message </title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .amNotify{
+            height: 200px;
+            width: 300px;
+            border: 1px solid none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* display: grid;
+            place-items: center; */
+            background-color: #949398ff;
+        }
+
+        #amMessage{
+            text-align: center;
+            border: 1px solid gold;
+            width: 150px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+
+        #exit{
+            cursor: pointer;
+        }
+
+        #head{
+            position: fixed;
+            border: 1px solid  none;
+            width: 100%;
+            height: 25px;
+            background-color: gold;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+
+        #done{
+            position: relative;
+            top: 47%;
+            /* text-align: center;
+            align-self: center; */
+            margin: auto;
+            width: 100%;
+            border: 1px solid gold;
+            cursor: pointer;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="amNotify">
+        <div id="head">
+            <button id="exit"> X </button>
+        </div> 
+        <p id="amMessage">Time to take your Medicine
+        </p>
+        <button id="done"> Done </button>
+    </div>
+    <script>
+        let exit = document.querySelector(".amNotify");
+        let exitM = document.querySelector("#amMessage").innerHTML;
+        let button = document.querySelector("#exit");
+        let done = document.querySelector("#done");
+
+        button.addEventListener("click", function(){
+            exit.style.display = "none";
+        })
+
+        done.addEventListener("click", function(){
+            exit.style.display = "none";
+        })
+
+        console.log(exitM);
+    </script>
+</body>
+</html>

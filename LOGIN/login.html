@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Medimate </title>
+    <link rel="stylesheet" href="login_style.css"> <!-- external CSS -->
+</head>
+
+<body>
+
+    <div class="border">  <!-- parent of all elements within, such as img, h1, form, and p-->
+                                        <!-- below are the children until the last</div> -->            
+        <img id="cat" src="cat.webp"/>
+        <div class="inputs">
+            <form action="http://192.168.73.187:8989/Medimate-mobile/Medimate/www/LOGIN/login.php" method="POST">
+                <h1>
+                Login
+                </h1>
+                
+                <div class="message">
+                    <img src="yellow-med.jpg" id="yellow"/>
+                    <p id="greet"> Greetings and welcome! </p>
+                </div>
+
+                <input type="text" required class="email" placeholder="&#9993; Email" name="email">
+
+                <input type="password" required class="pass" placeholder="&#x1F5DD; Password" name="password">
+                
+                <input type="submit" value="Continue" name="continue" class="sub">
+                
+                <p id="do"> Don't have an account? <a href="http://192.168.73.187:8989/Medimate-mobile/Medimate/www/Register/registration.php" id="sign"> Sign up </a> </p>
+            </form>
+        </div>
+
+    </div>
+  
+    <script src="login_function.js"> </script> <!-- external JavaScript -->
+    <script>
+        fetch("http://192.168.73.187:8989/Medimate-mobile/Medimate/www/LOGIN/login.php")
+              .then(response => response.text())
+              .then(data => {
+                  console.log(data);
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+              });
+    </script>
+    
+</body>
+
+</html>

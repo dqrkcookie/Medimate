@@ -1,0 +1,482 @@
+body{
+    background-color: #f4df4eff;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: sans-serif;
+    /* text-align: center; */
+}
+
+.border{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #949398ff;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    border-radius: 20px 20px;
+    box-shadow: 1px 11px 10px rgba(0, 0, 0, .2);
+}
+
+h1{
+    position: relative;
+    display: block;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    font-size: 70px;
+    background-color: hidden;
+    width: 100%;
+    text-align: center;
+    font-variant: small-caps;
+    color: #f4df4eff;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, .5);
+}
+
+#cat{
+    position: absolute;
+    top: -6.2%;
+    left: 5%;
+    height: 80px;
+    width: 80px;
+    transform: rotate(180deg);
+    transition: 2s;
+    z-index: 1;
+}
+
+#cat:hover{
+    position: absolute;
+    transform: rotate(360deg);
+    top: -50px;
+}
+
+.inputs{
+    position: absolute;
+    border: 1px solid hidden;
+    width: 100%;
+    height: 100%;
+    /* grid-area: form; */
+    /* font-size: 1vw;  */
+    border: 1px solid none;
+}
+
+form{
+    /* grid-area: form; */
+    position: relative;
+    border: 1px solid none;
+    width: 100%;
+    height: 100%;
+}
+
+.email, .pass{
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    width: 200px;
+    color: rgba(255, 255, 255, .9);
+    background-color: transparent;
+    text-decoration-color: #f4df4eff;
+    border: 1px solid #f4df4eff;
+    border-radius: 10px 10px;
+    outline: none;
+    box-shadow: 
+    1px 1px 5px rgba(253, 250, 41, .5) inset,
+    -1px -1px 5px rgba(253, 250, 41, .5) inset;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email:focus, .pass:focus{
+    box-shadow: 
+    1px 1px 15px rgba(253, 250, 41, .5) inset,
+    -1px -1px 15px rgba(253, 250, 41, .5) inset;
+}
+
+.email:focus::placeholder{
+    position: relative;
+    left: 73%; 
+}
+
+
+
+.pass:focus::placeholder{
+    position: relative;
+    left: 60%;
+}
+
+.sub{
+    position: relative;
+    padding: 10px 30px;
+    margin-top: 15px;
+    background-color: #949398ff;
+    cursor: pointer;
+    border-radius: 10px 10px;
+    border: 1px solid #f4df4eff;
+    box-shadow: 1px 1px 5px rgba(253, 250, 41, .5) inset;
+    color: #f4df4eff;
+    transition: background-color .3s;
+    display: block;
+    /* text-shadow: 1px 1px 5px rgba(0, 0, 0, .6); */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub:hover{
+    background-color: rgb(238, 224, 98);
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, .9);
+}
+
+.sub:active{
+    background-color: rgba(78, 71, 31, 0.8);
+    scale: 1.01;
+}
+
+#yellow{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin-top: 60px;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+}
+
+#check,
+label[for="check"]
+{
+    position: relative;
+    color: rgba(255, 255, 255, .8);
+    display: inline-block;
+    position: relative;
+    left: 22%;
+    font-size: 14px;
+    margin-top: 10px;
+}    
+
+#check:focus, #check.active{
+    transform: scale(1.3);
+}
+
+#check:focus:not(.active){
+    transform: scale(1);
+}
+
+#do{
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .8);
+    transition: scale .3s;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: #f4df4eff;
+}
+
+#sign:hover{
+    text-decoration: underline;
+}
+
+#sign:active{
+    color: rgba(255, 255, 255, .8);
+}
+
+::placeholder{
+    color: #f4df4eff;
+}
+
+.message{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 1px solid none;
+    color: #f4df4eff;
+    font-size: 20px;
+    font-variant: small-caps;
+    border: 1px solid none;
+}
+
+#greet{
+    text-shadow: .45px .45px 1px rgb(252, 247, 247);
+    animation: bounce 1s infinite alternate;    
+    animation-delay: 1.5s;
+    z-index: 99999;
+}
+
+#greet span{
+    display: inline-block;
+    opacity: 0;
+}
+
+#greet span:nth-child(1){
+    animation: appear 0s forwards infinite;
+    animation-delay: .1s;
+}
+
+#greet span:nth-child(2){
+    animation: appear .2s forwards;
+    animation-delay: .2s;
+}
+
+#greet span:nth-child(3){
+    animation: appear .3s forwards;
+    animation-delay: .3s;
+}
+
+#greet span:nth-child(4){
+    animation: appear .4s forwards;
+    animation-delay: .4s;
+}
+
+#greet span:nth-child(5){
+    animation: appear .5s forwards;
+    animation-delay: .5s;
+}
+
+#greet span:nth-child(6){
+    animation: appear .6s forwards;
+    animation-delay: .6s;
+}
+
+#greet span:nth-child(7){
+    animation: appear .7s forwards;
+    animation-delay: .7s;
+}
+                                        /*this is the time of appearance and delay for each character in Greeting and Welcome!*/
+#greet span:nth-child(8){
+    animation: appear .8s forwards;
+    animation-delay: .8s;
+}
+
+#greet span:nth-child(9){
+    animation: appear .9s forwards; 
+    animation-delay: .9s;
+}
+
+#greet span.space {
+    animation-delay: .9s;
+}
+
+#greet span:nth-child(10){
+    animation: appear 1s forwards;
+    animation-delay: 1s;
+}
+
+#greet span:nth-child(11){
+    animation: appear 1.1s forwards;
+    animation-delay: 1.1s;
+}
+
+#greet span:nth-child(12){
+    animation: appear 1.2s forwards;
+    animation-delay: 1.2s;
+}
+
+#greet span.space {
+    animation-delay: 1.2s;
+}
+
+#greet span:nth-child(13){
+    animation: appear 1.3s forwards;
+    animation-delay: 1.3s;
+}
+
+#greet span:nth-child(14){
+    animation: appear 1.4s forwards;
+    animation-delay: 1.4s;
+}
+
+#greet span:nth-child(15){
+    animation: appear 1.5s forwards;
+    animation-delay: 1.5s;
+}
+
+#greet span:nth-child(16){
+    animation: appear 1.6s forwards;
+    animation-delay: 1.6s;
+}
+
+#greet span:nth-child(17){
+    animation: appear 1.7s forwards;
+    animation-delay: 1.7s;
+}
+
+#greet span:nth-child(18){
+    animation: appear 1.8s forwards;
+    animation-delay: 1.8s;
+}
+
+#greet span:nth-child(19){
+    animation: appear 1.9s forwards;
+    animation-delay: 1.9s;
+}
+
+#greet span:nth-child(20){
+    animation: appear 2s forwards;
+    animation-delay: 2s;
+}
+
+#greet span:nth-child(21){
+    animation: appear 2.1s forwards;
+    animation-delay: 2.1s;
+}
+
+#greet span:nth-child(22){
+    animation: appear 2.2s forwards;
+    animation-delay: 2.2s;
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0px)  /*don't store large-value pixels at 0% since it makes the animation bad*/
+    }
+    20%{
+        transform: translateY(-10px);
+    }
+    60%{
+        transform: translateY(0px);                   
+    }                               /*paragraph will bounce, so the page will not look boring.*/ 
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }                   /*appearance delay per character*/                                      
+    to{
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-height: 990px) and (max-width: 1500px){
+    #do{
+        position: relative;
+        font-size: 12px;
+        margin-top: 10px;
+    } 
+
+    h1{
+        position: relative;
+        font-size: 300%;
+        margin-top: 25px;
+    } 
+
+    #check{
+        position: relative;
+        /* left: -5%; */
+        /* font-size: 12px; */
+        display: inline-block;
+        margin-left: -10px;
+    }
+
+    label[for="check"]{
+        position: relative;
+        font-size: 11px;
+    }
+
+
+    #check:focus, #check.active{
+        transform: scale(1.2);
+    }
+                                    /*for screen responsiveness (elements will change their size when resizing happens in the browser window)*/ 
+    .message{
+        position: absolute;
+    }
+
+    .email, .pass{
+        position: relative;
+        padding: 5px;
+        width: 55%;
+        margin-top: 5px;
+    } 
+
+    .inputs{
+        border: 1px solid none;
+        height: 150%;
+        width: 50%;
+    }
+
+    .email{
+        margin-top: 130px;
+    }
+
+    .email::placeholder, .pass::placeholder{
+        position: relative;
+    }
+
+    .email:focus::placeholder{
+        position: relative;
+        left: 67%;
+    }
+
+    .pass:focus::placeholder{
+        position: relative;
+        left: 50%;
+    }
+ 
+    .sub{
+        position: relative;
+        padding: 3px;
+        margin-top: 7px;
+    } 
+
+    @keyframes bounce{
+        0%{
+            transform: translateY(0px);
+        }
+        20%{
+            transform: translateY(-10px);
+        }
+        60%{
+            transform: translateY(-0px);       
+        }
+        100%{
+            transform: translateY(-10px);
+        }
+    }
+
+    #yellow{
+        width: 28%;
+        height: 47%;
+        margin-bottom: 13px;
+        margin-top: 16px
+    }
+    
+    #greet{
+        border: 1px solid none;
+        font-size: 14px;
+        width: 65%;
+        margin: auto;
+    }
+
+    .message{
+        display: block;
+        position: absolute;
+        margin-top: -50px;
+        border: 1px solid none;
+        width: 90%;
+        height: 30%;
+        margin-left: 14px;
+        /* left: 15px; */
+    }
+
+    .inputs{
+        width: 100%;
+    }
+
+    #cat{
+        width: 50px;
+        height: 50px;
+        top: -15px;
+    }
+}
